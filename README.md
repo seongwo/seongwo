@@ -1,4 +1,4 @@
-# Seongwoo Lim
+# Seong-U IM
 
 I'm an undergraduate in Artificial Intelligence at **Kongju National University** and a student researcher in the **Data Science with Deep Learning Lab**.
 

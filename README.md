@@ -1,58 +1,50 @@
 # Seongwoo Lim
 
-Undergraduate in Artificial Intelligence at **Kongju National University**
+I'm an undergraduate in Artificial Intelligence at **Kongju National University** and a student researcher in the **Data Science with Deep Learning Lab**.
 
-Undergraduate researcher, **Data Science with Deep Learning Lab**
+My research focuses on spatiotemporal modeling and representation learning. I am interested in how a model should represent information at different scales, and what it can retain when input length or computation is limited.
 
-I study how the structure of data can guide **representations, model architectures, and learning objectives**. My work began with multi-scale spatiotemporal forecasting and has expanded toward efficient video understanding and predictive representation learning. I am preparing to apply for master's programs.
+## Research
 
-## Research questions
+### [MSF-ST · Multi-Scale SST Forecasting](https://github.com/seongwo/multiscale-sst-forecasting)
 
-- How should models represent and combine information at different spatial and temporal scales?
-- Which information needs to be retained when computation or input length is limited?
-- What do learned representations preserve, and how can controlled experiments reveal this?
+*First-author research*
 
-My longer-term interest is in learning representations of environment states and dynamics that support **prediction and adaptation**. Future-state representation learning is a research direction I am working toward.
+Sea surface temperature contains both broad regional changes and local temperature fronts. I studied a multi-scale Transformer that represents these structures at different resolutions and combines their forecasts. The work includes scale and component ablations, baseline comparisons, and a gradient difference loss for preserving spatial structure.
 
-## Selected research and projects
+[Method](https://github.com/seongwo/multiscale-sst-forecasting/blob/public-release/docs/method.md) · [Experiments](https://github.com/seongwo/multiscale-sst-forecasting/blob/public-release/docs/experiment_record.md)
 
-### [MSF-ST: Multi-Scale Fusion Spatiotemporal Transformer](https://github.com/seongwo/multiscale-sst-forecasting)
+### [SST Representation Learning · State-JEPA](https://github.com/seongwo/predict-jepa)
 
-**First-author research · Sea surface temperature forecasting**
+*Ongoing research*
 
-SST contains both broad spatial patterns and local frontal structures. I investigated whether representing these structures at multiple scales improves forecasting. The method combines spatial scales **2, 4, 8, and 16**, factorized spatial–temporal Transformers, scale-wise predictions and fusion, and a gradient difference loss. Baseline comparisons and ablations examine the architectural choices.
+I am now studying what an SST encoder retains in its representations. In a recent experiment, I froze the encoder and compared the same MLP decoder with and without a small spatial mixer, keeping the initial outputs and evaluation data matched.
 
-### [SST representation learning](https://github.com/seongwo/predict-jepa)
+The mixer improved reconstruction from pretrained features, but random encoders still reconstructed pixels more accurately. This has led me to examine the difference between recovering an input and learning features useful for prediction. Future-state prediction is the next research direction.
 
-**Ongoing research · State-JEPA and controlled reconstruction experiments**
+[Experiment and controls](https://github.com/seongwo/predict-jepa/blob/experiment/state-jepa/docs/experiments/frozen_decoder_spatial_mixer.md) · [Available code](https://github.com/seongwo/predict-jepa#current-release-and-research-status)
 
-I am investigating what SST representations retain before extending the study to future-state prediction. The current local implementation learns through **same-state spatial latent prediction**. A subsequent experiment freezes the encoder and compares a token-wise MLP decoder with the same decoder plus a zero-initialized residual spatial mixer, including random-encoder controls.
+## Projects
 
-These are **same-state reconstruction experiments**; they do not yet establish future-state prediction or forecasting gains. The public repository currently contains the data and masking foundation; further implementation and experiment documentation are being prepared for release.
+### [ZroAct · Video-Language Safety Monitoring](https://github.com/seongwo/zroact-portfolio)
 
-### [Video-language safety monitoring — ZroAct](https://github.com/seongwo/zroact-portfolio)
+*Team capstone · AI Leader / modeling*
 
-**Team capstone · AI Leader / modeling**
+We combined action detection with a small vision-language model for CCTV safety monitoring. Action and temporal context accompany sampled frames, giving the VLM information beyond the images alone. My work focused on AI modeling, prompt/component experiments, and LoRA adaptation. The repository contains the AI pipeline, serving interface, and experiment records.
 
-A two-stage system uses YOWOv3 action detection to summarize video as actions, bounding boxes, and temporal information, then passes this context alongside sampled frames to a small VLM. The question is how to retain useful temporal information when the VLM cannot process the full video directly.
+### [Korean AI-Generated Text Detection](https://github.com/seongwo/text-deepfake-detection)
 
-My role focused on AI modeling, including prompt/component experiments and LoRA adaptation. The team built an end-to-end monitoring system; this repository presents the AI pipeline, serving components, and experiment records. Results belong to their specific model, prompt, and evaluation settings.
+*Team project · 2025 SW-Centered University Digital Competition, AI Track*
 
-### [Korean AI-generated text detection](https://github.com/seongwo/text-deepfake-detection)
+Our team used KoELECTRA, loss weighting, sampling, windowed inference, and ensembles to address imbalanced labels and long texts. We placed **7th out of 279 teams** and received a **Sponsored Company Award**. The linked repository is my fork of the team's code.
 
-**Team competition project · 2025 SW-Centered University Digital Competition, AI Track**
+## Earlier work
 
-The team addressed class imbalance, long text, and noisy labels using KoELECTRA-based classification, loss weighting, sampling, sliding-window inference, and score-level ensembles. **7th of 279 teams; Sponsored Company Award.** This repository is a fork of the team's code; the result and combined method are team achievements.
+- **Speech representation pooling:** explored VQ-based pooling of Wav2Vec 2.0 features. Pretraining did not converge reliably within the available compute budget.
+- **Emotion-aware dialogue:** fine-tuned Qwen2.5 with LoRA on synthetic instruction data to generate a response and an emotion state.
+- **Infectious disease forecasting:** contributed as a coauthor to a spatiotemporal bacterial gastroenteritis forecasting study.
+- **Camera assistance:** proposed language-guided camera parameter recommendations in an idea-stage competition project.
 
-## Other research experience
+I mainly work with **Python and PyTorch**. My project experience also includes LoRA, vLLM, Git, and Linux.
 
-- **Speech representation pooling:** explored VQ-based pooling of Wav2Vec 2.0 frame representations to reduce redundancy. Pretraining did not converge reliably under the available compute budget; this remains an exploratory study.
-- **Emotion-aware dialogue:** used synthetic instruction data and Qwen2.5 with LoRA to jointly produce a response and an emotion state.
-- **Infectious disease forecasting:** participated as a coauthor in a spatiotemporal bacterial gastroenteritis forecasting study. Publication details and component-level contributions will be added when confirmed.
-- **On-device camera assistance:** an idea-stage competition project proposing language-guided camera parameter recommendations, lightweight visual analysis, and efficient deployment.
-
-## Technical experience
-
-**Python · PyTorch · Transformers · Spatiotemporal modeling · VLMs · LoRA · vLLM · Git / Linux**
-
-Contact: [growingcow01@gmail.com](mailto:growingcow01@gmail.com)
+[Email](mailto:growingcow01@gmail.com)
